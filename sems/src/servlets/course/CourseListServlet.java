@@ -36,16 +36,15 @@ public class CourseListServlet extends HttpServlet{
 		
 		out.println("<a href='course.html'>새과정</a><br>");
 		out.println("<table border='1'>");
-		out.println("<tr><td>번호</td><td>과정</td></tr>");
+		out.println("<tr><th>번호</th><th>과정</th></tr>");
 			
-		for(CourseVo course : list){
-		out.println("	<tr><td>"
-				+ course.getNo()
-				+ "</td><a href='detail.bit?no='"
-				+ course.getNo()
-				+ "'><td>"
-				+ course.getTitle()
-				+ "</td></tr>");
+		for (CourseVo course : list) {
+			out.println("<tr>");
+			out.println("	<td>" + course.getNo() + "</td>");
+			out.println("	<td><a href='detail.bit?no="
+					+ course.getNo()
+					+ "'>" + course.getTitle() + "</a></td>");
+			out.println("</tr>");
 		}
 			
 		out.println("</table>");
