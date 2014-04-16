@@ -45,7 +45,7 @@ public class UserListServlet extends HttpServlet {
 				out.println("<tr>");
 				out.println("<td>" + user.getNo() + "</td>");
 				out.println("<td><a href='detail.bit?no=" + user.getNo() 
-										+">" + user.getEmail() + "</td>");
+										+"'>" + user.getEmail() + "</td>");
 				out.println("<td>" + user.getName() +"</td>");
 				out.println("</tr>");
 				
