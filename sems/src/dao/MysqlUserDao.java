@@ -61,7 +61,7 @@ public class MysqlUserDao implements UserDao {
 			con = dbConnectionPool.getConnection();
 			stmt = con.prepareStatement(
 					"select UNO, EMAIL, NAME from SE_USERS"
-							+ " order by UNO desc"
+							+ " order by UNO "
 							+ " limit ?, ?");
 			stmt.setInt(1, (pageNo - 1) * pageSize);
 			stmt.setInt(2, pageSize);
