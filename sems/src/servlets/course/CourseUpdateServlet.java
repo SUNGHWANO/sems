@@ -44,12 +44,12 @@ public class CourseUpdateServlet extends HttpServlet {
 					+ "' readonly><br>");
 			out.println("과정명: <input type='text' name='title' value='"
 					+ vo.getTitle()
-					+ "'><br>");
-			out.println("설명: <textarea name='description' rows='10' cols='80'>"
-					+ vo.getDescription()
-					+ "</textarea><br>");
-			out.println("교육시간: <textarea name='description' rows='10' cols='80'>"
+					+ "'>");
+			out.println("교육시간: <input type='text' name='hours' value='>"
 					+ vo.getHours()
+					+ "'><br>");
+			out.println("설명:<br> <textarea name='description' rows='10' cols='80'>"
+					+ vo.getDescription()
 					+ "</textarea><br>");
 			out.println("<input type='submit' value='변경'>");
 			out.println("<input type='button' value='취소'");
