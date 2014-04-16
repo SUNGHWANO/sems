@@ -40,7 +40,7 @@ public class MysqlUserDao implements UserDao {
 			stmt.setString(5, user.getFax());
 			stmt.setString(6, user.getPostNo());
 			stmt.setString(7, user.getAddress());
-			stmt.setString(7, user.getPhotoPath()); //처리!photoPath받지않기.
+			stmt.setString(8, user.getPhotoPath()); //처리!photoPath받지않기.
 			
 			
 			stmt.executeUpdate();
@@ -61,7 +61,7 @@ public class MysqlUserDao implements UserDao {
 			con = dbConnectionPool.getConnection();
 			stmt = con.prepareStatement(
 					"select UNO, EMAIL, NAME from SE_USERS"
-							+ " order by UNO "
+							+ " order by UNO desc"
 							+ " limit ?, ?");
 			stmt.setInt(1, (pageNo - 1) * pageSize);
 			stmt.setInt(2, pageSize);
