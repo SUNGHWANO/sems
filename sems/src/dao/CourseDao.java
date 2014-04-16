@@ -3,7 +3,6 @@ package dao;
 import java.util.List;
 
 import vo.CourseVo;
-import vo.SubjectVo;
 
 public interface CourseDao{
 	void insert(CourseVo course) throws Throwable;
