@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import vo.SubjectVo;
 import vo.UserVo;
-import dao.SubjectDao;
 import dao.UserDao;
 
 @WebServlet("/subject/detail.bit")
