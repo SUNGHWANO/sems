@@ -1,4 +1,4 @@
-package servlets.subject;
+package servlets.course;
 
 import java.io.IOException;
 import java.io.PrintWriter;
