@@ -31,7 +31,7 @@ public class CourseDetailServlet extends HttpServlet{
 			request.setAttribute("course", course);
 			
 			RequestDispatcher rd = 
-					request.getRequestDispatcher("/course/list.jsp");
+					request.getRequestDispatcher("/course/detail.jsp");
 			rd.forward(request, response);
 			
 		} catch (Throwable e) {

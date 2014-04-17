@@ -37,7 +37,7 @@ public class CourseInsertServlet extends HttpServlet{
 			dao.insert(vo);
 			
 			RequestDispatcher rd =
-					request.getRequestDispatcher("/course/list.jsp");
+					request.getRequestDispatcher("/course/insert.jsp");
 			rd.forward(request, response);
 			
 			
