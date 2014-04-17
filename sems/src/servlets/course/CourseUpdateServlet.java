@@ -50,7 +50,7 @@ public class CourseUpdateServlet extends HttpServlet {
 			vo.setNo(Integer.parseInt(request.getParameter("no")));
 			vo.setTitle(request.getParameter("title"));
 			vo.setDescription(request.getParameter("description"));
-			vo.setDescription(request.getParameter("hours"));
+			vo.setHours(Integer.parseInt(request.getParameter("hours")));
 			
 			dao.update(vo);
 						
