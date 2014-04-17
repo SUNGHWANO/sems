@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,13 +21,7 @@ public class SubjectListServlet extends HttpServlet {
 	protected void doGet(
 			HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
-		
-		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		out.println("<html><head><title>과목목록</title></head><body>");
 		try {
-			out.println("<h1>과목 목록</h1>");
-			
 			SubjectDao dao = (SubjectDao)this.getServletContext()
 																							.getAttribute("subjectDao");
 			
@@ -35,27 +30,14 @@ public class SubjectListServlet extends HttpServlet {
 			
 			List<SubjectVo> list = dao.list(pageNo, pageSize);
 			
-			out.println("<a href='form.html'>새과목</a><br>");
-			out.println("<table border='1'>");
-			out.println("<tr>");
-			out.println("	<th>번호</th>");
-			out.println("	<th>과목명</th>");
-			out.println("</tr>");
+			request.setAttribute("list", list);
 			
-			for (SubjectVo subject : list) {
-				out.println("<tr>");
-				out.println("	<td>" + subject.getNo() + "</td>");
-				out.println("	<td><a href='detail.bit?no="
-						+ subject.getNo()
-						+ "'>" + subject.getTitle() + "</a></td>");
-				out.println("</tr>");
-			}
-			out.println("</table>");
+			RequestDispatcher rd = request.getRequestDispatcher("/subject/list.jsp");
+			rd.forward(request, response);
+			
 		} catch (Throwable e) {
-			out.println("오류 발생 했음!");
 			e.printStackTrace();
 		}
-		out.println("</body></html>");
 	}
 }
 
