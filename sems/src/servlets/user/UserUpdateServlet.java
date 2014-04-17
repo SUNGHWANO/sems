@@ -57,18 +57,18 @@ public class UserUpdateServlet extends HttpServlet {
 			out.println("팩스: <input type='text' name='fax' value='"
 					+ vo.getFax()
 					+ "'><br>");
-			out.println("우편번호: <input type='text' name='postNo' value='"
+			out.println("우편번호: <input type='text' name='postno' value='"
 					+ vo.getPostNo()
 					+ "'><br>");
 			out.println("주소: <input type='text' name='address' value='"
 					+ vo.getAddress()
 					+ "'><br>");
-			/*out.println("사진경로: <textarea name='description' rows='10' cols='80'>"
+			out.println("사진경로: <input type='text' name='photopath' value='"
 					+ vo.getPhotoPath()
-					+ "</textarea><br>");*/
+					+ "'><br>");
 			out.println("<input type='submit' value='변경'>");
 			out.println("<input type='button' value='취소'");
-			out.println("				onclick=\"location.href='detail.bit?no="
+			out.println(" onclick=\"location.href='detail.bit?no="
 					+ vo.getNo()
 					+ "'\">");
 			out.println("</form>");
@@ -106,9 +106,9 @@ public class UserUpdateServlet extends HttpServlet {
 			vo.setName(request.getParameter("name"));
 			vo.setTel(request.getParameter("tel"));
 			vo.setFax(request.getParameter("fax"));
-			vo.setPostNo(request.getParameter("postNo"));
+			vo.setPostNo(request.getParameter("postno"));
 			vo.setAddress(request.getParameter("address"));
-			//vo.setPhotoPath(request.getParameter("photoPath"));
+			vo.setPhotoPath(request.getParameter("photopath"));
 			
 			dao.update(vo);
 			
