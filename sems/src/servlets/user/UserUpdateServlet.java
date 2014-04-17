@@ -42,25 +42,25 @@ public class UserUpdateServlet extends HttpServlet {
 			out.println("사용자번호: <input type='text' name='no' value='"
 					+ vo.getNo()
 					+ "' readonly><br>");
-			out.println("이메일: <input type='text' name='title' value='"
+			out.println("이메일: <input type='text' name='email' value='"
 					+ vo.getEmail()
 					+ "'><br>");
-			out.println("암호: <input type='text' name='title' value='"
+			out.println("암호: <input type='text' name='password' value='"
 					+ vo.getPassword()
 					+ "'><br>");
-			out.println("사용자명: <input type='text' name='title' value='"
+			out.println("사용자명: <input type='text' name='username' value='"
 					+ vo.getName()
 					+ "'><br>");
-			out.println("전화: <input type='text' name='title' value='"
+			out.println("전화: <input type='text' name='tel' value='"
 					+ vo.getTel()
 					+ "'><br>");
-			out.println("팩스: <input type='text' name='title' value='"
+			out.println("팩스: <input type='text' name='fax' value='"
 					+ vo.getFax()
 					+ "'><br>");
-			out.println("우편번호: <input type='text' name='title' value='"
+			out.println("우편번호: <input type='text' name='postNo' value='"
 					+ vo.getPostNo()
 					+ "'><br>");
-			out.println("주소: <input type='text' name='title' value='"
+			out.println("주소: <input type='text' name='address' value='"
 					+ vo.getAddress()
 					+ "'><br>");
 			/*out.println("사진경로: <textarea name='description' rows='10' cols='80'>"
@@ -108,7 +108,7 @@ public class UserUpdateServlet extends HttpServlet {
 			vo.setFax(request.getParameter("fax"));
 			vo.setPostNo(request.getParameter("postNo"));
 			vo.setAddress(request.getParameter("address"));
-			vo.setPhotoPath(request.getParameter("photoPath"));
+			//vo.setPhotoPath(request.getParameter("photoPath"));
 			
 			dao.update(vo);
 			
