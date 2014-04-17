@@ -54,7 +54,7 @@ public class CourseUpdateServlet extends HttpServlet {
 			
 			dao.update(vo);
 						
-			response.sendRedirect("detail.bit?no=" + vo.getNo());
+			response.sendRedirect("update.bit?no=" + vo.getNo());
 			
 		} catch (Throwable e) {
 			e.printStackTrace();

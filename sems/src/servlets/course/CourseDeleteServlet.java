@@ -25,7 +25,7 @@ public class CourseDeleteServlet extends HttpServlet {
 			int no = Integer.parseInt(request.getParameter("no"));
 			
 			dao.delete(no);
-			response.sendRedirect("list.bit?pageNo=1&pageSize=10");
+			response.sendRedirect("delete.bit?pageNo=1&pageSize=10");
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
