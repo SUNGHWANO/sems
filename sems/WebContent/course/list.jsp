@@ -25,7 +25,7 @@ List<CourseVo> list =
 		<tr>
 		<%for(CourseVo course : list) {%>
 			<td><%=course.getNo()%></td>
-			<td><a href='detail.bit?no=<%=course.getNo()
+			<td><a href='list.bit?no=<%=course.getNo()
 			%>'><%=course.getTitle()%></a></td>
 		</tr>
 		<%}%>
