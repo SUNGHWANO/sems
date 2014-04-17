@@ -50,7 +50,7 @@ public class UserInsertServlet extends HttpServlet {
 			vo.setName(request.getParameter("name"));
 			vo.setTel(request.getParameter("tel"));
 			vo.setFax(request.getParameter("fax"));
-			vo.setPostNo(request.getParameter("postNo"));
+			vo.setPostNo(request.getParameter("postno"));
 			vo.setAddress(request.getParameter("address"));
 			vo.setPhotoPath(request.getParameter("photoPath"));
 			
