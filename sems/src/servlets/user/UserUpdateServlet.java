@@ -103,7 +103,7 @@ public class UserUpdateServlet extends HttpServlet {
 			vo.setNo(Integer.parseInt(request.getParameter("no")));
 			vo.setEmail(request.getParameter("email"));
 			vo.setPassword(request.getParameter("password"));
-			vo.setName(request.getParameter("name"));
+			vo.setName(request.getParameter("username"));
 			vo.setTel(request.getParameter("tel"));
 			vo.setFax(request.getParameter("fax"));
 			vo.setPostNo(request.getParameter("postno"));

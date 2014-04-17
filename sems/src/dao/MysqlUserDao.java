@@ -129,8 +129,8 @@ public class MysqlUserDao implements UserDao {
 			con = dbConnectionPool.getConnection();
 			stmt = con.prepareStatement(
 								"update SE_USERS set"
-												+ " EMAIL,"
-												+ " PWD=?"
+												+ " EMAIL=?"
+												+ ", PWD=?"
 												+ ", NAME=?"
 												+ ", TEL=?"
 												+ ", FAX=?"
