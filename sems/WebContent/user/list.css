@@ -1,9 +1,81 @@
 @CHARSET "UTF-8";
 
 body{
-		background: 4D4848;
+	background: #F2F5F1;
 }
 
-#tableHeader{
-		font
+
+
+h1{
+	width: 435px;
+	height: 50px;
+/* background: #148D16;  */
+	text-align: center;
+	vertical-align: middle;
+}
+.box{
+	margin-left: 30%;
+}
+
+.subform{
+	font-size: 0.8em;
+	font-weight: thin;
+	font-family: sans-serif;
+}
+
+.subform .label {
+
+  display: inline-block;
+  width: 100px;
+  height:20px;
+  padding:5px;
+  vertical-align: middle;
+  text-align: right;
+
+  margin-right: 10px;
+  font-weight: bold;
+  background: #9DC427;
+  color: black;
+  
+}
+#submit, #reset{
+   margin-left: 10px;
+  padding:5px 5px;
+  font-size: 1em;
+  color: black;
+  text-align: center;
+  border-radius: 3px;
+  background: #148D16;
+  width: 55px;
+  height: 30px;
+  border: none;
+  box-shadow: 0 0 4px gray;
+}
+
+#submit:hover,#reset:hover{
+	
+	background: #148D16;
+	color: white;
+}
+.subform input{
+	font-size: 1.0em;
+	color: rgb(255,255,255,1);
+	font-color: whilte;
+	border: none;
+	background: #EBEF36;	
+	/* box-shadow: inset 0 0 10px rgba(255,255,255,.75); */
+	width: 300px;
+	height: 20px;
+	padding: 5px;	
+}
+
+.subform input:focus{
+  background: white;
+  color: black;
+
+}
+
+
+.table{
+		
 }

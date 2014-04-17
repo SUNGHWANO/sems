@@ -2,22 +2,55 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel='stylesheet' type='text/css' href='list.css'>
 <title>사용자입력폼</title>
 </head>
 <body>
-<h1>사용자 입력</h1>
-<form action="insert.bit" method="post">
-이   메  일 : <input type="email" name="email"><br>
-비밀번호 : <input type="password" name="password"><br>
-이름 : <input type="text" name="name"><br>
-전화번호:<input type="tel" name="tel"><br>
-팩스:<input type="tel" name="fax"><br>
-우편번호:<input type="text" name="postNo"><br>
-주소:<input type="text" name="address"><br>
-사진:<input type="url" name="photo"><br>
+<div class="box">
+<h1> Insert new User </h1>
+<form class="subform" action="insert.bit" method="post">
+<p>
+	<label for="name" class="label">Email</label>
+	<input type="email" name="email" id="email">
+</p>
+<p>
+	<label for="password" class="label">Password </label>
+	<input type="password" name="password" id="password">
+</p>
+<p>
+	<label for="name" class="label">name</label>
+	<input type="text" name="name" id="email">
+</p>
 
-<input type="submit" value="등록">
-<input type="reset" value="취소">
+<p>
+	<label for="tel" class="label">Tel</label>
+	<input type="tel" name="tel" id="tel">
+
+</p>
+<p>
+	<label for="fax" class="label">Fax</label>
+	<input type="text" name="tel" id="">
+
+</p>
+<p>
+	<label for="postno" class="label">postNo</label>
+	<input type="text" name="postNo" id="postNo">
+
+</p> 
+<p>
+	<label for="address" class="label">Address</label>
+	<input type="text" name="address" id="address">
+
+</p>
+<p>
+	<label for="photo" class="label">Photo</label>
+	<input type="url" name="photo" id="photo">
+
+</p>
+<p  class="button"><input id="submit" type="submit" value="Submit">
+<input id ="reset" type="reset" value="Refresh">
+</p>
 </form>
+</div>
 </body>
 </html>
