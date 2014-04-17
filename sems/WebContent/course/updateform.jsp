@@ -19,15 +19,10 @@ CourseVo course = (CourseVo) request.getAttribute("course");
 교육시간: <input type='text' name='hours' value='<%=course.getHours()%>'><br>
 <input type='submit' value='변경'>
 <input type='button' value='취소'
-        onclick="location.href='update.bit?no=<%=course.getNo()%>'">
+        onclick="location.href='detail.bit?no=<%=course.getNo()%>'">
 </form>
 </body>
 </html>
-    
-    
-    
-    
-    
     
     
     
