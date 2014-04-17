@@ -13,10 +13,12 @@ CourseVo course = (CourseVo) request.getAttribute("course");
 <body>
 <h1>과정 상세정보(by JSP)</h1>
 <table border='1'>
+
 <tr>
   <th>번호</th>
   <td><%=course.getNo()%></td>
 </tr>
+
 <tr>
   <th>과정명</th>
   <td><%=course.getTitle()%></td>
@@ -26,9 +28,11 @@ CourseVo course = (CourseVo) request.getAttribute("course");
   <th>내용</th>
  <td><textarea rows='5' cols='60'><%=course.getDescription()%></textarea></td>
 </tr>
+
 <tr>
   <th>교육시간</th>
   <td><%=course.getHours()%></td>
+</tr>
 
 </table>
 <a href='list.bit?pageNo=1&pageSize=10'>목록</a> 
