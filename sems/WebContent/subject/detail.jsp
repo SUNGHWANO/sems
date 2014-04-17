@@ -20,7 +20,7 @@ SubjectVo subject = (SubjectVo)request.getAttribute("subject");
   <th>과목</th><td><%=subject.getTitle()%></td>
 </tr>
 <tr>
-  <th>내용</th><td><%=subject.getDescription()%></td>
+  <th>내용</th><td><textarea rows='5' cols='50'><%=subject.getDescription()%></textarea></td>
 </tr>
 </table>
 <a href='list.bit?pageNo=1&pageSize=10'>목록</a>
