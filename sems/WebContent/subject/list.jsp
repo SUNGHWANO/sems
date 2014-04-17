@@ -13,6 +13,7 @@ List<SubjectVo> list = (List<SubjectVo>)request.getAttribute("list");
 </head>
 <body>
 <h1>과목 목록</h1>
+<a href='form.html'>새과목</a>
 <table border='1'>
   <tr>
     <th>번호</th><th>과목</th>
