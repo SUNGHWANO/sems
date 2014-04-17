@@ -37,16 +37,16 @@ public class UserListServlet extends HttpServlet {
 			out.println("<a href ='form.html'>새 사용자</a><br>");
 			out.println("<table border='1'>");
 			out.println("<tr><th>번호</th>");
-			out.println("<th>이메일</th>");
 			out.println("<th>이름</th>");
+			out.println("<th>이메일</th>");
 			out.println("</tr>");
 				
 			for(UserVo user: list){
 				out.println("<tr>");
 				out.println("<td>" + user.getNo() + "</td>");
+				out.println("<td>" + user.getName() +"</td>");
 				out.println("<td><a href='detail.bit?no=" + user.getNo() 
 										+"'>" + user.getEmail() + "</td>");
-				out.println("<td>" + user.getName() +"</td>");
 				out.println("</tr>");
 				
 			}
