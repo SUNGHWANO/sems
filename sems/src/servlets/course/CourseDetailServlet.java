@@ -29,6 +29,7 @@ public class CourseDetailServlet extends HttpServlet{
 			CourseVo course = dao.detail(no);
 			
 			request.setAttribute("course", course);
+			
 			RequestDispatcher rd = 
 					request.getRequestDispatcher("/course/detail.jsp");
 			rd.forward(request, response);

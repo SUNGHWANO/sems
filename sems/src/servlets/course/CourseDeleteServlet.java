@@ -17,15 +17,14 @@ public class CourseDeleteServlet extends HttpServlet {
 	protected void doGet(
 			HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {		
-		try {
-			
+		try {			
 			CourseDao dao = (CourseDao)this.getServletContext()
 					.getAttribute("courseDao");
 			
 			int no = Integer.parseInt(request.getParameter("no"));
 			
 			dao.delete(no);
-			response.sendRedirect("delete.bit?pageNo=1&pageSize=10");
+			response.sendRedirect("list.bit?pageNo=1&pageSize=10");
 			
 		} catch (Throwable e) {
 			e.printStackTrace();

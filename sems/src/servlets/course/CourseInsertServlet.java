@@ -26,7 +26,6 @@ public class CourseInsertServlet extends HttpServlet{
 			HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 		try {
-			
 			CourseDao dao = (CourseDao)this.getServletContext()
 					.getAttribute("courseDao");
 			
@@ -41,7 +40,6 @@ public class CourseInsertServlet extends HttpServlet{
 					request.getRequestDispatcher("/course/insert.jsp");
 			rd.forward(request, response);
 			
-			response.setHeader("Refresh", "1;url=list.bit?pageNo=1&pageSize=10");
 			
 		} catch (Throwable e) {
 			e.printStackTrace();

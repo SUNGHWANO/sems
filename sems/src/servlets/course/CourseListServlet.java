@@ -20,7 +20,6 @@ public class CourseListServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 		try{
-		
 		CourseDao dao = (CourseDao)this.getServletContext().getAttribute("courseDao");
 		
 		int pageNo = Integer.parseInt(request.getParameter("pageNo"));

@@ -30,7 +30,7 @@ public class CourseUpdateServlet extends HttpServlet {
 			request.setAttribute("course", course);
 			
 			RequestDispatcher rd =
-					request.getRequestDispatcher("/subject/updateform.jsp");
+					request.getRequestDispatcher("/course/updateform.jsp");
 			rd.forward(request, response);
 			
 		} catch (Throwable e) {
@@ -54,7 +54,7 @@ public class CourseUpdateServlet extends HttpServlet {
 			
 			dao.update(vo);
 						
-			response.sendRedirect("update.bit?no=" + vo.getNo());
+			response.sendRedirect("detail.bit?no=" + vo.getNo());
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
