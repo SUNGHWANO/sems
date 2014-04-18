@@ -9,5 +9,6 @@
 </head>
 <body>
 <p>등록성공</p>
+<jsp:include page="/footer.jsp"/>
 </body>
 </html>
