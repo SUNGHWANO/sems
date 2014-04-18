@@ -1,7 +1,6 @@
 package servlets.subject;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import vo.SubjectVo;
 import dao.SubjectDao;
 
+/* View 적용 
+ * 
+ */
+
 @WebServlet("/subject/detail.bit")
 @SuppressWarnings("serial")
 public class SubjectDetailServlet extends HttpServlet {
@@ -20,19 +23,20 @@ public class SubjectDetailServlet extends HttpServlet {
 	protected void doGet(
 			HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
-	try {		
+		try {
 			SubjectDao dao = (SubjectDao)this.getServletContext()
 					.getAttribute("subjectDao");
-
+			
 			int no = Integer.parseInt(request.getParameter("no")); 
 			
 			SubjectVo subject = dao.detail(no);
 			
 			request.setAttribute("subject", subject);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/subject/detail.jsp");
+			RequestDispatcher rd = 
+					request.getRequestDispatcher("/subject/detail.jsp");
 			rd.forward(request, response);
-
+			
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}

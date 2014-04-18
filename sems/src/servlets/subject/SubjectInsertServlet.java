@@ -1,7 +1,6 @@
 package servlets.subject;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,7 +26,7 @@ public class SubjectInsertServlet extends HttpServlet {
 	protected void doGet(
 			HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
-	try {
+		try {
 			SubjectDao dao = (SubjectDao)this.getServletContext()
 					.getAttribute("subjectDao");
 			
@@ -36,8 +35,9 @@ public class SubjectInsertServlet extends HttpServlet {
 			vo.setDescription(request.getParameter("description"));
 			
 			dao.insert(vo);
-	
-			RequestDispatcher rd = request.getRequestDispatcher("/subject/insert.jsp");
+			
+			RequestDispatcher rd = 
+					request.getRequestDispatcher("/subject/insert.jsp");
 			rd.forward(request, response);
 			
 		} catch (Throwable e) {
@@ -45,6 +45,8 @@ public class SubjectInsertServlet extends HttpServlet {
 		}
 	}
 }
+
+
 
 
 

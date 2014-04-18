@@ -9,6 +9,7 @@ import java.util.List;
 import util.DBConnectionPool;
 import vo.SubjectVo;
 
+// SubjectVo의 setter/getter 사용
 public class MysqlSubjectDao implements SubjectDao {
 	DBConnectionPool dbConnectionPool;
 

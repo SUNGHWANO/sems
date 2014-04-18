@@ -1,7 +1,6 @@
 package servlets.subject;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,19 +20,19 @@ public class SubjectUpdateServlet extends HttpServlet {
 			HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 		try {
-
 			int no = Integer.parseInt(request.getParameter("no"));
+			
 			SubjectDao dao = (SubjectDao)this.getServletContext()
 					.getAttribute("subjectDao");
-
+			
 			SubjectVo subject = dao.detail(no);
 			
 			request.setAttribute("subject", subject);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/subject/update.jsp");
+			RequestDispatcher rd = 
+					request.getRequestDispatcher("/subject/updateform.jsp");
 			rd.forward(request, response);
 			
-	
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
@@ -44,17 +43,16 @@ public class SubjectUpdateServlet extends HttpServlet {
 			HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 		try {
-			
 			SubjectDao dao = (SubjectDao)this.getServletContext()
 					.getAttribute("subjectDao");
-			
+			 
 			SubjectVo vo = new SubjectVo();
 			vo.setNo(Integer.parseInt(request.getParameter("no")));
 			vo.setTitle(request.getParameter("title"));
 			vo.setDescription(request.getParameter("description"));
 			
 			dao.update(vo);
-	
+			
 			response.sendRedirect("detail.bit?no=" + vo.getNo());
 			
 		} catch (Throwable e) {

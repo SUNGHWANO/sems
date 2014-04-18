@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.ArrayList;
 
+// JDBC URL, Driver, ID, PWD를 외부에서 주입 
 public class DBConnectionPool {
 	String url;
 	String driver;

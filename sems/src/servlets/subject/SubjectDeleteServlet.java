@@ -1,7 +1,6 @@
 package servlets.subject;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,15 +18,12 @@ public class SubjectDeleteServlet extends HttpServlet {
 			HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 		try {
-			
 			SubjectDao dao = (SubjectDao)this.getServletContext()
 					.getAttribute("subjectDao");
 			
 			int no = Integer.parseInt(request.getParameter("no"));
 			
 			dao.delete(no);
-			
-
 			response.sendRedirect("list.bit?pageNo=1&pageSize=10");
 			
 		} catch (Throwable e) {
@@ -35,6 +31,17 @@ public class SubjectDeleteServlet extends HttpServlet {
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

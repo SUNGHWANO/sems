@@ -1,5 +1,7 @@
 package vo;
 
+/* setter/getter 적용 <= 캡슐화
+ */
 public class SubjectVo {
 	private int 				no;				
 	private String			title;   
