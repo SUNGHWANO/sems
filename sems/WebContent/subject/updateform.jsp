@@ -14,7 +14,7 @@
 <form action='update.bit' method='post'>
 번호: <input type='text' name='no' value='${subject.no}' readonly><br>
 과목명: <input type='text' name='title' value='${subject.title}'><br>
-설명: <textarea name='descrijspption' 
+설명: <textarea name='description' 
         rows='10' cols='80'>${subject.description}</textarea><br>
 <input type='submit' value='변경'>
 <input type='button' value='취소' 
