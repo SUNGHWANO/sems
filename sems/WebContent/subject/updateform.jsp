@@ -17,8 +17,7 @@
 설명: <textarea name='description' 
         rows='10' cols='80'>${subject.description}</textarea><br>
 <input type='submit' value='변경'>
-<input type='button' value='취소' 
-        onclick="location.href='detail.bit?no=${subject.no}'">
+<input type='button' value='취소' onclick='history.back()'>
 </form>
 <c:set var="studyClass" value="Java48$$" scope="request"/>
 <jsp:include page="/footer.jsp"/>
