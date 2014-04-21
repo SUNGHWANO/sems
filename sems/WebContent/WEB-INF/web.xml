@@ -40,9 +40,19 @@
     </init-param>
   </filter>
   
+  <filter>
+    <filter-name>authFilter</filter-name>
+    <filter-class>filters.authFilter</filter-class>
+  </filter>
+  
   <!-- 필터를 적용할 URL을 선언 -->
   <filter-mapping>
     <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>*.bit</url-pattern> <!-- '?' 전에 끝나는 URL -->
+  </filter-mapping>
+  
+  <filter-mapping>
+    <filter-name>authFilter</filter-name>
     <url-pattern>*.bit</url-pattern> <!-- '?' 전에 끝나는 URL -->
   </filter-mapping>
     
