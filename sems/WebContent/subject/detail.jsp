@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>과목 상세정보(EL)</h1>
-<table border='1'>
+<table class="btn btn-primary btn-lg">
 <tr>
   <th>번호</th>
   <td>${subject.no}</td>
