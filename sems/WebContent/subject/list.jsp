@@ -8,6 +8,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+<jsp:include page="/header.jsp"/>
   <title>과목목록</title>
 </head>
 <body>

@@ -6,6 +6,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <jsp:include page="/header.jsp"/>
   <title>과목상세정보</title>
 </head>
 <body>
