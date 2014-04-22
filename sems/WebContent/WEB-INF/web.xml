@@ -50,12 +50,12 @@
     <filter-name>CharacterEncodingFilter</filter-name>
     <url-pattern>*.bit</url-pattern> <!-- '?' 전에 끝나는 URL -->
   </filter-mapping>
-  <!-- 
+  
   <filter-mapping>
     <filter-name>authFilter</filter-name>
-    <url-pattern>*.bit</url-pattern> '?' 전에 끝나는 URL
+    <url-pattern>*.bit</url-pattern> 
   </filter-mapping>
-     -->
+   
   <!-- 
         http://localhost:9999/web01/subject
         위와 같이 클라이언트의 요청 URL이 폴더까지만 지정된다면 

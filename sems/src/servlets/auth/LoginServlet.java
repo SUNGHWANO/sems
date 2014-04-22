@@ -54,27 +54,27 @@ public class LoginServlet extends HttpServlet {
 			String password = request.getParameter("password");
 			String saveEmail = request.getParameter("saveEmail");
 			
-			
-			UserDao userDao = (UserDao)this.getServletContext().getAttribute("userDao");
+			UserDao dao = (UserDao)this.getServletContext()
+					.getAttribute("userDao");
 			
 			UserVo userVo = null;
-			try{
+			try {
 				// DB에서 사용자 정보 조회
-				// 만약, 일치하는 사용자가 있다면 
-				// 사용자 기본정보(이메일,전화,이름)를 가져와서 세션에 보관한다.
-				userVo = userDao.getUser(email, password);
+				// 만약, 일치하는 사용자가 있다면
+				// => 사용자 기본정보(이메일, 전화, 이름)를 가져와서 세션에 보관한다.
+				userVo = dao.getUser(email, password);
 				
 				// getSession();
-				// - JSSESSIONID로 세션 객체를 찾아서 리턴한다.
-				// - 만약 JSSESSIONID에 해당하는 세션 객체를 찾지 못하면 새로 생성.
-				//  				(세션이 타임아웃되어서 무효처리된 경우)
-				// 	 JSESSIONID 쿠키 값이 요청 헤더에 없으면 새로 생성
+			  // - JSESSIONID(요청헤더의 쿠키정보)로 세션 객체를 찾아서 리턴한다.
+				// - 만약 JSESSIONID에 해당하는 세션 객체를 찾지 못하면 새로 생성.
+				// 					(세션이 타임아웃되어서 무효처리된 경우)
+				//   JSESSIONID 쿠키 값이 요청 헤더에 없으면 새로 생성 
 				HttpSession session = request.getSession();
 				session.setAttribute("loginUser", userVo);
 				
-			}catch(Throwable ex){
-				// 그 밖에, 일치하는 사용자가 없다면 
-				// => 로그인 입력폼 페이지로 보낸다
+			} catch (Throwable ex) {
+			// 그 밖에, 일치하는 사용자가 없다면
+				// => 로그인 입력폼 페이지로 보낸다.
 				response.sendRedirect("login.bit");
 				return;
 			}
