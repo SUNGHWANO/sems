@@ -1,4 +1,4 @@
-package chat.upgrade;
+package chat.up2;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
@@ -67,12 +67,11 @@ public class ChatClient extends Frame implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == inputMessage) { // 서버에 보낼 메세지 입력
+		if (e.getSource() == inputMessage) { // 서버에 보낼 메시지 입력
 			msgPane.append("[me] " + inputMessage.getText() + "\n");
 			out.println(inputMessage.getText());
 			inputMessage.setText("");
 			
-		
 		} else if (e.getSource() == btnConnect) {
 			if (socket != null) {
 				msgPane.append("이미 접속중입니다. 끊고 다시 접속하세요.\n");
@@ -91,7 +90,7 @@ public class ChatClient extends Frame implements ActionListener {
 				friendName = message.split(" ")[1];
 				msgPane.append("접속되었습니다.\n");
 				
-				// 스레드 생성
+				// 스레드 생성 
 				MessageReader reader = new MessageReader();
 				reader.start(); // 스레드 시작
 				
@@ -120,27 +119,29 @@ public class ChatClient extends Frame implements ActionListener {
 		chatClient.setSize(400, 300);
 		chatClient.setVisible(true);
 	}
-
 	
 	// 1. 스레드 만들기 - Thread 클래스를 상속
-	// 독립적으로 실행할 코드는 run() 메서드에 넣는다.
-	class MessageReader extends Thread{
+	// - 독립적으로 실행할 코드는 run() 메서드에 넣는다.
+	// * 스레드의 라이프사이클
+	// 스레드 생성 -> start() -> 스레드 실행(run()호출) -> sleep() -> 스레드 정지
+	// run() 호출 종료 -> 스레드 종료(dead)
+	class MessageReader extends Thread {
 		@Override
 		public void run() {
-			while(true){
-			try {
-				// 서버에서 보내는 데이터 출력
-				String message = in.readLine();
-				msgPane.append("[" + friendName + "] " + message + "\n");
-				
-			} catch (Exception ex) {
-				msgPane.append(ex.getMessage() + "\n");
-			}
+			while (true) {
+				try {
+					// 서버에서 보내는 데이터 출력
+					String message = in.readLine();
+					msgPane.append("[" + friendName + "] " + message + "\n");
+					
+				} catch (Exception ex) {
+					msgPane.append(ex.getMessage() + "\n");
+				}
 			}
 		}
 	}
 	
-	
+
 }
 
 
