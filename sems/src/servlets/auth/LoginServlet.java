@@ -15,7 +15,7 @@ import dao.UserDao;
 import vo.UserVo;
 
 
-@WebServlet("/auth/login.bit")
+//@WebServlet("/auth/login.bit")
 @SuppressWarnings("serial")
 public class LoginServlet extends HttpServlet {
 	@Override

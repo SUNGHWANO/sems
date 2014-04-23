@@ -4,15 +4,13 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import dao.MysqlCourseDao;
+import util.DBConnectionPool;
+import controls.SubjectListControl;
 import dao.MysqlSubjectDao;
 import dao.MysqlUserDao;
-import util.DBConnectionPool;
 
-/* ServletContextListener
- * - 웹 애플리케이션의 시작/종료 이벤트 처리 
- * - 구현체 작성 => web.xml 등록
- * - <listener></listener> 
+/* PageController를 ServletContext에 보관함.
+ * - PageController가 필요로 하는 의존 객체를 주입한 후에 보관한다.
  */
 public class ContextLoaderListener implements ServletContextListener {
 	DBConnectionPool dbConnectionPool;
@@ -38,16 +36,32 @@ public class ContextLoaderListener implements ServletContextListener {
 		subjectDao.setDBConnectionPool(dbConnectionPool);
 		sc.setAttribute("subjectDao", subjectDao);
 		
-		MysqlCourseDao courseDao = new MysqlCourseDao();
-		courseDao.setDBConnectionPool(dbConnectionPool);
-		sc.setAttribute("courseDao", courseDao);
-		
 		MysqlUserDao userDao = new MysqlUserDao();
 		userDao.setDBConnectionPool(dbConnectionPool);
 		sc.setAttribute("userDao", userDao);
+		
+		SubjectListControl subjectListControl = new SubjectListControl();
+		subjectListControl.setSubjectDao(subjectDao);
+		sc.setAttribute("/subject/list.bit", subjectListControl);
+		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
