@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">    
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,28 +15,48 @@ h1 {
 }
 
 body {
+  background-color: #4C0B5F;
+}
+
+
+
+#div {
+  margin-left: 800px;
+}
+
+#context {
+  margin-top: 70px;
+  border: 1px solid red;
+  height: 300px;
   background-color: #F2F2F2;
 }
 
-#main {
-  margin-top: 100px;
-  margin-left: 300px;
-}
 </style>
+<script>
+$(function(){
+	  $("#fm").css("display", "none");
+
+$("h1").click(function(){
+	$("#fm").css("display", "");
+});
+});
+</script>
 </head>
 <body>
+<div id="context">
 <div id="main">
+<div id="div">
 <h1>로그인</h1>
-<form action="login.bit" method="post" class="form-horizontal" role="form">
+<form id="fm" action="login.bit" method="post" class="form-horizontal" role="form">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-5">
+    <div class="col-sm-6">
       <input type="email" name="email" value="${cookie.loginEmail.value}" class="form-control" id="inputEmail3" placeholder="Email">
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-    <div class="col-sm-5">
+    <div class="col-sm-6">
       <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password">
     </div>
   </div>
@@ -58,6 +79,8 @@ body {
     </div>
   </div>
 </form>
+</div>
+</div>
 </div>
 
 
