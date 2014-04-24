@@ -38,7 +38,7 @@ h1 {
 </c:forEach>
 </table>
 <div id="new">
-<a href='form.html' class="btn btn-info">새과목</a><br>
+<a href='insert.bit' class="btn btn-info">새과목</a><br>
 </div>
 <jsp:include page="/footer.jsp"/>
 </body></html>
