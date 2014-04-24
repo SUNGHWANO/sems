@@ -6,6 +6,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<link rel="Stylesheet" href="../css/common.css"> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +25,7 @@ h1 {
 </style>
 </head>
 <body>
+<div class="container">
 <h1>과목 목록</h1>
 <table class="table">
 <tr>
@@ -41,6 +43,7 @@ h1 {
 <a href='insert.bit' class="btn btn-info">새과목</a><br>
 </div>
 <jsp:include page="/footer.jsp"/>
+</div>
 </body></html>
 
 

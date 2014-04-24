@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<link rel="Stylesheet" href="../css/common.css">    
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +12,6 @@
 <title>과목입력폼</title>
 </head>
 <body>
-<style>
-h1 {
-  text-align: center;
-}
-#title {
-  text-align: center;
-  font-size: 14px;
-  color: #D8D8D8;
-  width: 205px;
-  margin-left: 2px; 
-}
-#description {
-  text-align: center;
-  font-size: 14px;
-  color: #D8D8D8;
-}
-#main {
-  width: 209px;
-}
-#input {
-  text-align: center;
-}
-input {
-  border: 0px;
-}
-</style>
 </head>
 <body>
   <script>
@@ -69,9 +46,9 @@ input {
       }
     }
   </script>
-  <div id="main">
+  <div id="main" class="container">
   <h1>과목추가</h1>
-  <form id="form" name="form" action="insert.bit" method="post"
+  <form id="form" name="form" action="insert.bit" method="post" 
     onsubmit="return send()">
     <input id="title" name="title" type="text" value="과목을 입력하세요"
       onfocus="clearText(this)"><br>
@@ -79,12 +56,29 @@ input {
       onfocus="clearText(this)">내용을 입력하세요</textarea>
     <br> 
     <div id="input">
-    <input type="button" value="목록" onclick="history.back()">
-    <input type="submit" value="등록"> 
-    <input type="reset" value="취소">
+    <input type="button" value="목록" onclick="history.back()" class="btn btn-info">
+    <input type="submit" value="등록" class="btn btn-info"> 
+    <input type="reset" value="취소" class="btn btn-info">
     </div>
   </form>
   </div>
 <jsp:include page="/footer.jsp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
