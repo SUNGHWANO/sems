@@ -45,14 +45,14 @@ public class LoginControl implements PageController {
 					ArrayList<Cookie> cookies = new ArrayList<Cookie>();
 					
 					Cookie cookie = new Cookie("loginEmail", email);
-					cookie.setDomain("t.java48.com"); // 서버 범위
-					cookie.setPath("/web01t");					// 하위 폴더 범위
+					cookie.setDomain("s21.java48.com"); // 서버 범위
+					cookie.setPath("/sems");					// 하위 폴더 범위
 					
 					cookies.add(cookie);
 					model.put("cookies", cookies);
 				}
 				
-				return "redirect:../";
+				return "redirect:../subject/list.bit?pageNo=1&pageSize=10";
 			}
 		} catch (Throwable ex) {
 			throw new Error(ex);
