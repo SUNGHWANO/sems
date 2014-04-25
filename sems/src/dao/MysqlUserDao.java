@@ -6,24 +6,25 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import util.DBConnectionPool;
+import javax.sql.DataSource;
+
 import vo.UserVo;
 
 
 
 public class MysqlUserDao implements UserDao {
-	DBConnectionPool dbConnectionPool;
+	DataSource dataSource;
 	
-	public void setDBConnectionPool(DBConnectionPool dbConnectionPool) {
-		this.dbConnectionPool = dbConnectionPool;
-	}	
+	public void setDataSource(DataSource dataSource) {
+	  this.dataSource = dataSource;
+  }
 	
 	@Override
 	public void insert(UserVo user) throws Throwable {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		try {
-			con = dbConnectionPool.getConnection();
+			con = dataSource.getConnection();
 			stmt = con.prepareStatement(
 					"insert SE_USERS(EMAIL,"
 												+ "PWD,"
@@ -48,7 +49,7 @@ public class MysqlUserDao implements UserDao {
 			throw e;
 		} finally { 
 			try {stmt.close();} catch (Throwable e2) {}
-			dbConnectionPool.returnConnection(con);
+			try{con.close();}catch(Throwable e){}
 		}
 	}
 
@@ -58,7 +59,7 @@ public class MysqlUserDao implements UserDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		try {
-			con = dbConnectionPool.getConnection();
+			con = dataSource.getConnection();
 			stmt = con.prepareStatement(
 					"select UNO, EMAIL, NAME from SE_USERS"
 							+ " order by UNO desc"
@@ -81,7 +82,7 @@ public class MysqlUserDao implements UserDao {
 		} finally { 
 			try {rs.close();} catch (Throwable e2) {}
 			try {stmt.close();} catch (Throwable e2) {}
-			dbConnectionPool.returnConnection(con);
+			try{con.close();}catch(Throwable e){}
 		}
 	}
 
@@ -91,7 +92,7 @@ public class MysqlUserDao implements UserDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		try {
-			con = dbConnectionPool.getConnection();
+			con = dataSource.getConnection();
 			stmt = con.prepareStatement(
 					"select UNO, EMAIL, PWD, NAME, TEL, FAX, POSTNO, ADDR, "
 					+ "PHOT_PATH from SE_USERS" + " where UNO=?");
@@ -117,7 +118,7 @@ public class MysqlUserDao implements UserDao {
 		} finally { 
 			try {rs.close();} catch (Throwable e2) {}
 			try {stmt.close();} catch (Throwable e2) {}
-			dbConnectionPool.returnConnection(con);
+			try{con.close();}catch(Throwable e){}
 		}
 	}
 
@@ -126,7 +127,7 @@ public class MysqlUserDao implements UserDao {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		try {
-			con = dbConnectionPool.getConnection();
+			con = dataSource.getConnection();
 			stmt = con.prepareStatement(
 								"update SE_USERS set"
 												+ " EMAIL=?"
@@ -152,7 +153,7 @@ public class MysqlUserDao implements UserDao {
 			throw new DaoException(e);
 		} finally { 
 			try {stmt.close();} catch (Throwable e2) {}
-			dbConnectionPool.returnConnection(con);
+			try{con.close();}catch(Throwable e){}
 		}
 
 	}
@@ -162,7 +163,7 @@ public class MysqlUserDao implements UserDao {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		try {
-			con = dbConnectionPool.getConnection();
+			con = dataSource.getConnection();
 			stmt = con.prepareStatement(
 					"delete from SE_USERS where UNO=?"	);
 			stmt.setInt(1, no);
@@ -171,7 +172,7 @@ public class MysqlUserDao implements UserDao {
 			throw new DaoException(e);
 		} finally { 
 			try {stmt.close();} catch (Throwable e2) {}
-			dbConnectionPool.returnConnection(con);
+			try{con.close();}catch(Throwable e){}
 		}
 	}
 
@@ -181,7 +182,7 @@ public class MysqlUserDao implements UserDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		try{
-			con = dbConnectionPool.getConnection();
+			con = dataSource.getConnection();
 			stmt = con.prepareStatement(
 					"select UNO, EMAIL, PWD, NAME, TEL"
 					+ " from SE_USERS" 
@@ -205,7 +206,7 @@ public class MysqlUserDao implements UserDao {
 		}finally{
 			try{rs.close();}catch(Throwable e){}
 			try{stmt.close();}catch(Throwable e){}
-			dbConnectionPool.returnConnection(con);
+			try{con.close();}catch(Throwable e){}
 		}
   }
 }
