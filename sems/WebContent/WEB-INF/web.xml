@@ -7,24 +7,6 @@
     id="WebApp_ID" version="3.0">
   <display-name>sems</display-name>
 
-  <!-- context 파라미터는 누구든 사용할 수 있다. -->
-  <context-param>
-    <param-name>driver</param-name>
-    <param-value>com.mysql.jdbc.Driver</param-value>
-  </context-param>
-  <context-param>
-    <param-name>url</param-name>
-    <param-value>jdbc:mysql://localhost:3306/studydb</param-value>
-  </context-param>
-  <context-param>
-    <param-name>username</param-name>
-    <param-value>study</param-value>
-  </context-param>
-  <context-param>
-    <param-name>password</param-name>
-    <param-value>study</param-value>
-  </context-param>
-    
   <!-- ServletContextListener 등록 -->
   <listener>
     <listener-class>listeners.ContextLoaderListener</listener-class>

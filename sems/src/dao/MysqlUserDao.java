@@ -8,10 +8,11 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import annotation.Component;
 import vo.UserVo;
 
 
-
+@Component
 public class MysqlUserDao implements UserDao {
 	DataSource dataSource;
 	

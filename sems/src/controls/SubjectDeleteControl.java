@@ -2,8 +2,10 @@ package controls;
 
 import java.util.Map;
 
+import annotation.Component;
 import dao.SubjectDao;
 
+@Component("/subject/delete.bit")
 public class SubjectDeleteControl implements PageController {
 	SubjectDao subjectDao;
 

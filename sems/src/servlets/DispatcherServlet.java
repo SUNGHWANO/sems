@@ -119,6 +119,7 @@ public class DispatcherServlet extends HttpServlet {
 			if (m.getName().startsWith("set")) {
 				// 셋터 메서드의 파라미터 타입을 알아낸다.
 				Class<?> parameterType = m.getParameterTypes()[0];
+				
 				// 파라미터의 타입이 HttpSession 클래스인지 확인
 				if (parameterType == HttpSession.class) {
 					m.invoke(obj, session);
